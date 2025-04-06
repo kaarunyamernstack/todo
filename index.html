@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>EXPENSE CALCULATOR</h1>
+
+    <div class="summary">
+      <div id="totalIncome"> Total Income:Rs.0</div>
+      <div id="totalExpense"> Total Expense:Rs.0</div>
+      <div id="netBalance">Net Balance:Rs.0</div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="description" placeholder="Description">
+      <input type="number" id="amount" placeholder="Amount">
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button onclick="addEntry()">Add</button>
+      <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <div class="radio-group">
+      <label><input type="radio" name="filter" value="all" checked onchange="filterEntries()"> All</label>
+      <label><input type="radio" name="filter" value="income" onchange="filterEntries()"> Income</label>
+      <label><input type="radio" name="filter" value="expense" onchange="filterEntries()"> Expense</label>
+    </div>
+
+    <div class="entries" id="entryList"></div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
